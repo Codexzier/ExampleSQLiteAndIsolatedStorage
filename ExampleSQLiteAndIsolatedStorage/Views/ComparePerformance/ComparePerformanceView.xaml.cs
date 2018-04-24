@@ -82,9 +82,9 @@ namespace ExampleSQLiteAndIsolatedStorage.Views.ComparePerformance
                 SQLiteResultWrite = sqliteResults.ResultsSaved[index].Item2,
                 SQLiteResultRead = sqliteResults.ResultsRead[index].Item2,
                 SQLiteResultReadWhere = sqliteResults.ResultsReadWhere[index].Item2,
-                IsolatedStorageWrite = sqliteResults.ResultsSaved[index].Item2,
-                IsolatedStorageRead = sqliteResults.ResultsRead[index].Item2,
-                IsolatedStorageReadWhere = sqliteResults.ResultsReadWhere[index].Item2
+                IsolatedStorageWrite = isolatedStorageResults.ResultsSaved[index].Item2,
+                IsolatedStorageRead = isolatedStorageResults.ResultsRead[index].Item2,
+                IsolatedStorageReadWhere = isolatedStorageResults.ResultsReadWhere[index].Item2
             };
             this._viewModel.Results.Add(resultDataAverage);
         }
@@ -141,7 +141,7 @@ namespace ExampleSQLiteAndIsolatedStorage.Views.ComparePerformance
         }
 
         /// <summary>
-        /// Function to read data from the sqlite database.
+        /// Function to read only data from the sqlite database.
         /// </summary>
         /// <returns>(Unused)</returns>
         private Func<SQLiteConnection, DateTime, bool, int, Task<bool>> GetFuncSQLiteRead()
@@ -158,7 +158,7 @@ namespace ExampleSQLiteAndIsolatedStorage.Views.ComparePerformance
         }
 
         /// <summary>
-        /// Function to read data from the sqlite database and use the 'Linq' WHERE methode to filter data with information 'Wohnzimmer'.
+        /// Function to read data only from the sqlite database and use the 'Linq' WHERE methode to filter data with information 'Wohnzimmer'.
         /// </summary>
         /// <returns>(Unused)</returns>
         private Func<SQLiteConnection, DateTime, bool, int, Task<bool>> GetFuncSQLiteReadWithWhere()
@@ -208,7 +208,7 @@ namespace ExampleSQLiteAndIsolatedStorage.Views.ComparePerformance
         }
 
         /// <summary>
-        /// Read all data from isolated storage.
+        /// Read only all data from isolated storage.
         /// </summary>
         /// <returns>(Unused)</returns>
         private Func<IsolatedStorageManagerTestData, DateTime, bool, int, Task<bool>> GetFuncIsolatedStorageRead()
@@ -221,7 +221,7 @@ namespace ExampleSQLiteAndIsolatedStorage.Views.ComparePerformance
         }
 
         /// <summary>
-        /// Read all data from isolated storage and filter the data with containing 'Wohnzimmer'.
+        /// Read only all data from isolated storage and filter the data with containing 'Wohnzimmer'.
         /// </summary>
         /// <returns>(Unused)</returns>
         private Func<IsolatedStorageManagerTestData, DateTime, bool, int, Task<bool>> GetFuncIsolatedStorageReadAndWhere()
