@@ -110,9 +110,14 @@
     </Compile>
     <Compile Include="Views\ComparePerformance\ComparePerformanceViewModel.cs" />
     <Compile Include="Views\ComparePerformance\ListViewItemResult.cs" />
-    <Compile Include="Views\ComparePerformance\TestData.cs" />
+    <Compile Include="Data\TestData.cs" />
     <Compile Include="Views\ComparePerformance\IsolatedStorageManagerTestData.cs" />
+    <Compile Include="Data\TestDataTableMessures.cs" />
+    <Compile Include="Data\TestDataTableRoom.cs" />
+    <Compile Include="Data\TestDataTableTimeStamp.cs" />
     <Compile Include="Views\ComparePerformance\TestResults.cs" />
+    <Compile Include="Views\ComparePerformance\TestRunEnvironment.cs" />
+    <Compile Include="Views\ComparePerformance\TestRunEnvironmentResult.cs" />
     <Compile Include="Views\WithIsolatedStorage\IsolatedStorageManager.cs" />
     <Compile Include="Views\WithIsolatedStorage\WithIsolatedStorageView.xaml.cs">
       <DependentUpon>WithIsolatedStorageView.xaml</DependentUpon>
@@ -167,13 +172,13 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>6.0.8</Version>
+      <Version>6.1.9</Version>
     </PackageReference>
     <PackageReference Include="SQLite.Net-PCL">
       <Version>3.1.1</Version>
     </PackageReference>
     <PackageReference Include="SQLite.uwp">
-      <Version>3.23.0</Version>
+      <Version>3.25.1</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup />

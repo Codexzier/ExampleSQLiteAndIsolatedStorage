@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     d:DesignHeight="300"
-    d:DesignWidth="600" MinWidth="600">
+    d:DesignWidth="600" MinWidth="300" MaxWidth="300">
     <UserControl.Resources>
         <ResourceDictionary Source="ms-appx:///Styles/DefaultStyles.xaml"  />
     </UserControl.Resources>
@@ -19,13 +19,19 @@
 
         <StackPanel Grid.Row="0" Margin="0,0,0,30">
             <TextBlock Text="Example Performance Test" Style="{StaticResource TextTitle}" />
-            <TextBlock Text="Enter the number of records to store and read for the test."  Style="{StaticResource TextDescription}" />
-            <TextBox Text="{Binding WriteDataCount, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Grid.Column="0" />
+            <StackPanel>
+                <TextBlock Text="Enter the number of records to store and read for the test."  Style="{StaticResource TextDescription}" />
+                <TextBox Text="{Binding WriteDataCount, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Grid.Column="0" />
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Text="Enter the count of iterations."  Style="{StaticResource TextDescription}" />
+                <TextBox Text="{Binding CountOfIterations, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Grid.Column="0" />
+            </StackPanel>
             <Button Content="Run" Click="Button_Click" />
             <TextBlock Text="{Binding Status, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" />
         </StackPanel>
 
-        <ScrollViewer Grid.Row="1" VerticalAlignment="Stretch">
+        <ScrollViewer Grid.Row="1" VerticalAlignment="Stretch" HorizontalScrollBarVisibility="Auto" HorizontalScrollMode="Auto">
             <Grid >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />

@@ -31,6 +31,17 @@ namespace ExampleSQLiteAndIsolatedStorage.Views.ComparePerformance
             }
         }
 
+        private int _countOfIterations;
+        public int CountOfIterations
+        {
+            get => this._countOfIterations;
+            set
+            {
+                this._countOfIterations = value;
+                this.OnPropertyChanged(nameof(this.CountOfIterations));
+            }
+        }
+
         private string _status;
         public string Status
         {
