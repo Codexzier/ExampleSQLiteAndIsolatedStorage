@@ -24,6 +24,7 @@ namespace ExampleSQLiteAndIsolatedStorage.Views.ComparePerformance
             // set default start values
             this._viewModel.WriteDataCount = 10;
             this._viewModel.Status = "Nothing";
+            this._viewModel.CountOfIterations = 3;
         }
 
         /// <summary>
